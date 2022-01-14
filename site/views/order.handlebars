@@ -1,0 +1,17 @@
+<div style="font-size: 16px; margin-top: 1%;">
+    <ul class="row" style="background-color: #ffffff;">
+        <h1>Ваш заказ</h1>
+        <h1>Код получения: {{order.confirm_code}}</h1>
+        <h3>Статус: {{order.status}}</h3>
+        <div class="line"></div>
+        {{#each order_items}}
+    	    <div><h4>{{this.name}}<h4>
+            <h4 style="text-align: right;">{{this.price}} р.</h4>
+            <p></p></div>
+        
+        {{/each}}
+        <div class="line"></div>
+        <h1>Всего:</h1>
+        <h1 style="text-align: right;">{{full_price}} р.</h1>
+    </ul>
+</div>

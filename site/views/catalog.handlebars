@@ -1,0 +1,12 @@
+<div style="font-size: 16px; margin-top: 1%;">
+    {{#each catalog}}
+    <ul class="row" style="background-color: #ffffff;">
+    	<h2>{{this.name}}</h2>
+        {{#each this.children}}
+        <li class="col">
+        	<a href="/category/{{this.value}}">{{this.name}}</a>
+        </li>
+        {{/each}}
+    </ul>
+    {{/each}}
+</div>

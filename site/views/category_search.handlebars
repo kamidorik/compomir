@@ -1,0 +1,17 @@
+<div id="content">
+    <h2 style="text-align: center;">{{category_name}}</h2>
+    <div class="container">
+    {{#each search_list}}
+    <div class="row">
+        {{#each this}}
+        <div class="col prod-cell">
+            <img width="115" height = "115" src="/images/{{this.picture}}" />
+            <h2>{{this.name}}</h2>
+            <p>{{this.price}} р</p>
+            <a href="/product/{{this._id}}" class="btn btn-outline-dark">Купить</a>
+        </div>
+        {{/each}}
+    </div>
+    {{/each}}
+    </div>
+</div>

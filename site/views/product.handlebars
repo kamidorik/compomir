@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row" style="background-color: antiquewhite; margin-top: 1%">
+    <div class="col-8"><img src="/images/{{product.picture}}" width="640" height="640"/></div>
+    <div class="col-4">
+        <div>
+            <h3>{{product.name}}</h2>
+            <p></p>
+            <h5>Категория: {{category_name}}</h3>
+            <h5>На складе: {{product.quantity}} шт.</h3>
+            <p></p>
+            <h1 style="font-size: 58px">Цена: {{product.price}} р</h1>
+            {{#if product.hidden}}
+                <h1 style="font-size: 58px">Временно недоступен</h1>
+            {{else}}
+                {{#if req.user}}
+                    <form action="/add_cart/{{product._id}}" method="post"><input type="submit" value="В корзину" style="font-size: 21px;" class="btn btn-outline-success"></form>
+                    {{#if isConfigurable}}
+                        <form action="/add_configurator/{{product._id}}" method="post"><input type="submit" value="В конфигуратор" style="font-size: 21px;" class="btn btn-outline-dark"></form>
+                    {{/if}}
+                {{/if}}
+            {{/if}}
+
+        </div>
+    </div>
+  </div>
+</div>

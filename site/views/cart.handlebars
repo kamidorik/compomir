@@ -1,0 +1,30 @@
+<div id="content">
+    <h1 class="bi bi-basket"> Корзина</h1>
+    <p></p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Название</th>
+          <th scope="col">Количество</th>
+          <th scope="col">Цена</th>
+          <th scope="col">Действия</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each elements}}
+        <tr>
+          <td>{{this.name}}</td>
+          <td>1</td>
+          <td>{{this.price}} р</td>
+          <td><a href="/product/{{this._id}}" class="bi bi-card-image"></a></td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    <h1>Общая цена: {{price}} р</h1>
+    {{#if isButtons}}
+      <form action="/create_order" method="post"><input type="submit" value="Создать заказ" class="btn btn-outline-dark"></form>
+      <form action="/delete_cart" method="post"><input type="submit" value="Очистить корзину" class="btn btn-outline-dark"></form>
+    {{/if}}
+    
+</div>

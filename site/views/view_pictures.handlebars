@@ -1,0 +1,24 @@
+<div id="content">
+    <a href="/admin/upload_picture" class="btn btn-outline-dark">Добавить изображение</a>
+    <p></p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Название файла</th>
+          <th scope="col">Техническое название</th>
+          <th scope="col">Действия</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each elements}}
+        <tr>
+          <th scope="row">{{this._id}}</th>
+          <td>{{this.old_filename}}</td>
+          <td>{{this.filename}}</td>
+          <td><a href="/images/{{this.filename}}" class="bi bi-card-image"></a></td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+</div>

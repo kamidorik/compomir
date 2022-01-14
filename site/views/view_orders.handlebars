@@ -1,0 +1,25 @@
+<div id="content">
+    <p></p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Дата заказа</th>
+          <th scope="col">Статус</th>
+          <th scope="col">Код получения</th>
+          <th scope="col">Действия</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each elements}}
+        <tr>
+          <th scope="row">{{this._id}}</th>
+          <td>{{this.timestamp}}</td>
+          <td>{{this.status}}</td>
+          <td>{{this.confirm_code}}</td>
+          <td><a href="/admin/open_order/{{this._id}}" class="btn btn-outline-dark">Открыть</a></td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+</div>

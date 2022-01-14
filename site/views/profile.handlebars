@@ -1,0 +1,14 @@
+<div id="content">
+	<div>
+		<h2>Ваш профиль</h2>
+		<p>Никнейм: {{user.username}}</p>
+		{{#if admin}}
+		<p style="color: red;">Права администратора включены</p>
+		<a href="/admin">Перейти в админку</a>
+		{{/if}}
+	</div>
+	<div class="line"></div>
+	<div>
+		<a href="/profile/orders">Просмотреть мои заказы</a>
+	</div>
+</div>

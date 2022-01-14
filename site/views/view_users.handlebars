@@ -1,0 +1,23 @@
+<div id="content">
+    <p></p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Никнейм</th>
+          <th scope="col">Роль</th>
+          <th scope="col">Действия</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each elements}}
+        <tr>
+          <th scope="row">{{this._id}}</th>
+          <td>{{this.username}}</td>
+          <td>{{this.role}}</td>
+          <td><form action="/delete_user/{{this._id}}" method="post"><input type="submit" value="Удалить" class="btn btn-outline-danger"></form></td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+</div>
